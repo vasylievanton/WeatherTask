@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WeatherTask</string>
+    <string name="press_again_to_exit">Нажмите еще раз для выхода</string>
+    <string name="server_error">Ошибка сервера</string>
+    <string name="inet_error">Отстутствует подключение к интернету</string>
+    <string name="google_page">google.com</string>
+    <string-array name="cities">
+        <item>Днепропетровск</item>
+        <item>Запорожье</item>
+        <item>Киев</item>
+        <item>Харьков</item>
+    </string-array>
+</resources>

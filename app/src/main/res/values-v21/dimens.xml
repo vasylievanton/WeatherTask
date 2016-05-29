@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="progress_bar_size">48dp</dimen>
+    <dimen name="temp_text_size">50sp</dimen>
+    <dimen name="city_text_size">26sp</dimen>
+</resources>
