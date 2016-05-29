@@ -2,7 +2,6 @@ package com.task.vasilyevanton.weathertask.asynctasks;
 
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import com.task.vasilyevanton.weathertask.data.WeatherData;
 
@@ -45,17 +44,13 @@ public class WeatherAsyncTask extends AsyncTask<String, Void, Integer> {
                 HttpEntity entity = response.getEntity();
                 String data = EntityUtils.toString(entity, "UTF-8");
                 JSONObject j_object = new JSONObject(data);
-                Log.w("cur_weather", j_object.toString());
                 weatherData.setRefreshTime(j_object.getString("dt"));
-                Log.w("hhj", j_object.getString("dt"));
                 JSONObject j_object_temp = j_object.getJSONObject("clouds");
                 weatherData.setClouds(j_object_temp.getString("all"));
-                Log.w("hhj", j_object_temp.getString("all"));
                 j_object_temp = j_object.getJSONObject("sys");
                 weatherData.setSunset(j_object_temp.getString("sunset"));
                 weatherData.setSunrise(j_object_temp.getString("sunrise"));
                 weatherData.setCountryName(j_object_temp.getString("country"));
-
                 weatherData.setCityName(j_object.getString("name"));
 
                 JSONArray weather = j_object.getJSONArray("weather");
