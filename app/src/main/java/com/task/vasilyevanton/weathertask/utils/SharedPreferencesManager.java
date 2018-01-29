@@ -4,9 +4,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 public class SharedPreferencesManager {
-    public static final String APP_PREFERENCES = "Settings";
+    private static final String APP_PREFERENCES = "Settings";
     // properties
-    public static final String APP_PREFERENCES_CITY = "City";
+    private static final String APP_PREFERENCES_CITY = "City";
     private static SharedPreferencesManager sInstance;
     private final SharedPreferences mPref;
 
@@ -29,6 +29,7 @@ public class SharedPreferencesManager {
     }
 
     public void setCity(String city) {
+        clear();
         mPref.edit()
                 .putString(APP_PREFERENCES_CITY, city)
                 .commit();

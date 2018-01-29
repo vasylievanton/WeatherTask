@@ -48,6 +48,7 @@ public class WeatherFragment extends Fragment implements WeatherAsyncTask.OnGetW
         weatherDescription = (TextView) view.findViewById(R.id.weather_description);
         progressBar = (ProgressBar) view.findViewById(R.id.get_weather_progress_bar);
         progressBar.setVisibility(View.INVISIBLE);
+        getActivity().setTitle("Weather App");
     }
 
     private void getWeather() {
@@ -87,25 +88,13 @@ public class WeatherFragment extends Fragment implements WeatherAsyncTask.OnGetW
         progressBar.setVisibility(View.INVISIBLE);
         if (success == 0) {
             timer.cancel();
-            if (isInternetAvailable()) {
-                Snackbar.make(view, R.string.server_error, Snackbar.LENGTH_LONG).setAction("Action", null).show();
-            }
-            if (!isInternetAvailable()) {
-                Snackbar.make(view, R.string.inet_error, Snackbar.LENGTH_LONG).setAction("Action", null).show();
-            }
+            Snackbar.make(view, R.string.server_error, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+
         } else {
             setWeather(weatherData);
         }
     }
 
-    public boolean isInternetAvailable() {
-        try {
-            InetAddress ipAddress = InetAddress.getByName(getResources().getString(R.string.google_page));
-            return !ipAddress.equals("");
-        } catch (Exception e) {
-            return false;
-        }
-    }
 
     @Override
     public void onPause() {

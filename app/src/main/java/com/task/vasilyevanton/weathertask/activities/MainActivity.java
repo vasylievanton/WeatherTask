@@ -16,6 +16,7 @@ import com.task.vasilyevanton.weathertask.fragments.WeatherFragment;
 public class MainActivity extends AppCompatActivity {
     private static long sBackPressed;
     private Fragment settingsFragment;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +29,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void activityInit() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        setTitle("");
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
     }
 
     @Override

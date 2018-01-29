@@ -23,6 +23,7 @@ public class SettingsFragment extends Fragment implements AdapterView.OnItemClic
         View view = inflater.inflate(R.layout.weather_settings, container, false);
         fragmentInit(view);
         setRetainInstance(true);
+        getActivity().setTitle("Settings");
         return view;
     }
 

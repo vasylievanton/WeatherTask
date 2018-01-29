@@ -1,5 +1,7 @@
 package com.task.vasilyevanton.weathertask;
 
+import android.text.TextUtils;
+
 import com.task.vasilyevanton.weathertask.utils.SharedPreferencesManager;
 
 public class Application extends android.app.Application {
@@ -8,7 +10,7 @@ public class Application extends android.app.Application {
     public void onCreate() {
         super.onCreate();
         SharedPreferencesManager.initializeInstance(this);
-        if(SharedPreferencesManager.getInstance().getCity().equals("")){
+        if(TextUtils.isEmpty(SharedPreferencesManager.getInstance().getCity())){
             SharedPreferencesManager.getInstance().setCity(getResources().getStringArray(R.array.cities)[0]);
         }
     }
